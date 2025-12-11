@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumush - Dasturchi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+        .slide-in { animation: slideIn 1s ease-out forwards; }
+        .fade-in { animation: fadeIn 1s ease-out forwards; }
+        .pulse-anim { animation: pulse 2s ease-in-out infinite; }
+        .rotate-slow { animation: rotate 20s linear infinite; }
+        
+        .skill-card {
+            transition: all 0.3s ease;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen overflow-x-hidden">
+    <!-- Background Animated Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 float"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 float" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 float" style="animation-delay: 2s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-800 slide-in">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold gradient-text">Kumush</h1>
+            <div class="space-x-6">
+                <a href="#home" class="hover:text-blue-400 transition">Асосий</a>
+                <a href="#about" class="hover:text-blue-400 transition">Мен ҳақимда</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Кўникмалар</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Алоқа</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="container mx-auto px-6 text-center fade-in">
+            <div class="mb-8 inline-block">
+                <div class="w-40 h-40 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto glow float relative">
+                    <div class="absolute inset-0 flex items-center justify-center text-6xl">👨‍💻</div>
+                </div>
+            </div>
+            <h2 class="text-6xl font-bold mb-4 gradient-text">Салом, мен Кумушман!</h2>
+            <p class="text-2xl text-gray-400 mb-8">Профессионал Дастурчи</p>
+            <div class="flex gap-4 justify-center">
+                <button class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-semibold transition transform hover:scale-105 glow">
+                    Портфолио
+                </button>
+                <button class="border border-blue-600 hover:bg-blue-600/20 px-8 py-3 rounded-full font-semibold transition transform hover:scale-105">
+                    Алоқа
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12 gradient-text">Мен ҳақимда</h3>
+            <div class="max-w-3xl mx-auto bg-gray-800/50 backdrop-blur-md p-8 rounded-2xl border border-gray-700 skill-card">
+                <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                    Мен Кумуш - илғор технологиялар билан ишлашга қизиқувчи профессионал дастурчиман. 
+                    Замонавий веб-илова ва дастурларни яратишда кўп тажрибага эгаман.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    Ҳар бир лойиҳага ижодий ёндашув ва юқори сифат билан ёндашаман. 
+                    Янги технологияларни ўрганишга ва ўз кўникмаларимни ривожлантиришга доим тайёрман.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12 gradient-text">Кўникмалар</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="bg-gray-800/50 backdrop-blur-md p-6 rounded-2xl border border-gray-700 skill-card">
+                    <div class="text-5xl mb-4">🌐</div>
+                    <h4 class="text-2xl font-bold mb-3 text-blue-400">Web Development</h4>
+                    <p class="text-gray-400">HTML, CSS, JavaScript, React, Vue.js - замонавий веб-технологиялар</p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="bg-gray-800/50 backdrop-blur-md p-6 rounded-2xl border border-gray-700 skill-card" style="animation-delay: 0.2s;">
+                    <div class="text-5xl mb-4">⚙️</div>
+                    <h4 class="text-2xl font-bold mb-3 text-purple-400">Backend</h4>
+                    <p class="text-gray-400">Node.js, Python, PHP - кучли сервер томон дастурлаш</p>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="bg-gray-800/50 backdrop-blur-md p-6 rounded-2xl border border-gray-700 skill-card" style="animation-delay: 0.4s;">
+                    <div class="text-5xl mb-4">💾</div>
+                    <h4 class="text-2xl font-bold mb-3 text-pink-400">Database</h4>
+                    <p class="text-gray-400">MySQL, MongoDB, PostgreSQL - маълумотлар базаси бошқаруви</p>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="bg-gray-800/50 backdrop-blur-md p-6 rounded-2xl border border-gray-700 skill-card" style="animation-delay: 0.6s;">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h4 class="text-2xl font-bold mb-3 text-green-400">Mobile Dev</h4>
+                    <p class="text-gray-400">React Native, Flutter - мобил иловалар яратиш</p>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="bg-gray-800/50 backdrop-blur-md p-6 rounded-2xl border border-gray-700 skill-card" style="animation-delay: 0.8s;">
+                    <div class="text-5xl mb-4">🎨</div>
+                    <h4 class="text-2xl font-bold mb-3 text-yellow-400">UI/UX Design</h4>
+                    <p class="text-gray-400">Figma, Adobe XD - фойдаланувчи интерфейси дизайни</p>
+                </div>
+
+                <!-- Skill Card 6 -->
+                <div class="bg-gray-800/50 backdrop-blur-md p-6 rounded-2xl border border-gray-700 skill-card" style="animation-delay: 1s;">
+                    <div class="text-5xl mb-4">🔧</div>
+                    <h4 class="text-2xl font-bold mb-3 text-red-400">DevOps</h4>
+                    <p class="text-gray-400">Docker, Git, CI/CD - лойиҳаларни жойлаштириш ва бошқариш</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-4xl font-bold mb-8 gradient-text">Алоқа</h3>
+            <p class="text-xl text-gray-400 mb-12">Лойиҳангиз борми? Келинг, биргаликда ишлайлик!</p>
+            <div class="flex gap-6 justify-center flex-wrap">
+                <a href="mailto:kumush@example.com" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-full font-semibold transition transform hover:scale-105 glow flex items-center gap-2">
+                    📧 Email
+                </a>
+                <a href="https://github.com" class="bg-gray-800 hover:bg-gray-700 px-8 py-4 rounded-full font-semibold transition transform hover:scale-105 border border-gray-700 flex items-center gap-2">
+                    💻 GitHub
+                </a>
+                <a href="https://linkedin.com" class="bg-blue-700 hover:bg-blue-800 px-8 py-4 rounded-full font-semibold transition transform hover:scale-105 flex items-center gap-2">
+                    🔗 LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800/50 border-t border-gray-700 py-8 mt-20">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2024 Kumush. Барча ҳуқуқлар ҳимояланган.</p>
+            <p class="mt-2 pulse-anim">Яратилган ❤️ билан</p>
+        </div>
+    </footer>
+</body>
+</html>
